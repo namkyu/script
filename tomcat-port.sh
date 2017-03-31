@@ -22,7 +22,12 @@
 # port="숫자" 숫자 값 출력
 
 
-SERVER_XML_LIST=$(find /home/fxdev/GPORTAL -name 'server.xml' -not -path '*/.pc/*' -not -path '*/._DEFAULT_/*')
+if [ -z $1 ]; then
+  echo "[FAIL] you need to write path!!"
+  exit 1
+fi
+
+SERVER_XML_LIST=$(find $1 -name 'server.xml' -not -path '*/.pc/*' -not -path '*/._DEFAULT_/*')
 
 
 echo "+--------------+--------------+------+-------+"
