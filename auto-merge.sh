@@ -29,7 +29,7 @@ case $CURRENT_BRANCH in
 feature/*)
   check_command "git checkout develop"
   check_command "git pull origin develop"
-  check_command "git merge $CURRENT_BRANCH"
+  check_command "git merge $CURRENT_BRANCH --no-edit"
   check_command "git push origin develop"
   check_command "git checkout $CURRENT_BRANCH"
   ;;
